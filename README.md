@@ -71,3 +71,15 @@ class NicestFruit(BasicBlock):
 dashboard = FruitDashboard()
 dashboard.run()
 ```
+
+Open the dashboard at [http://localhost:7000](http://localhost:7000)
+
+## Made with
+
+- [Flask](http://flask.pocoo.org) - web framework
+- [Chart.js](http://www.chartjs.org/) - charts made with JavaScript
+
+## Meta
+
+Lucas Hild - [https://lucas-hild.de](https://lucas.hild.de)  
+This project is licensed under the MIT License - see the LICENSE file for details
