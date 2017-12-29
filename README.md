@@ -3,7 +3,7 @@
 A web-based dashboard to analyzing your data with Python
 
 ![](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
-[![PyPI](https://img.shields.io/pypi/v/boardify.svg?style=flat-square&colorB=dfb317)](https://pypi.python.org/pypi/boardify)
+[![PyPI](https://img.shields.io/pypi/v/boardify.svg?style=flat-square&colorB=dfb317)](https://pypi.org/project/boardify/)
 
 ![Screenshot](https://raw.githubusercontent.com/Lanseuo/boardify/master/screenshot.png)
 
@@ -54,14 +54,11 @@ class NicestFruit(BasicBlock):
 
     def data(self):
         # Define the data for the chart
-        data = [
-            {"label": "Apple", "value": 35, "color": "rgba(247, 0, 0, 0.2)"},
-            {"label": "Orange", "value": 20, "color": "rgba(254, 114, 0, 0.2)"},
-            {"label": "Banana", "value": 45, "color": "rgba(237, 250, 0, 0.2)"},
-            {"label": "Kiwifruit", "value": 10, "color": "rgba(12, 250, 0, 0.2)"},
-            {"label": "Blueberry", "value": 30, "color": "rgba(0, 85, 250, 0.2)"},
-            {"label": "Grapes", "value": 5, "color": "rgba(177, 0, 250, 0.2)"}
-        ]
+        data = {
+            "labels": ["Apple", "Orange", "Banana", "Kiwifruit", "Blueberry", "Grapes"],
+            "Survey One": [35, 20, 45, 10, 30, 5],
+            "Survey Two": [30, 25, 60, 5, 35, 0]
+        }
 
         # Generate the bar chart
         return BarChart(data, label="Fruits").generate()
