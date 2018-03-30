@@ -4,6 +4,7 @@ A web-based dashboard to analyzing your data with Python
 
 ![](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 [![PyPI](https://img.shields.io/pypi/v/boardify.svg?style=flat-square&colorB=dfb317)](https://pypi.org/project/boardify/)
+[![Requirements Status](https://requires.io/github/Lanseuo/boardify/requirements.svg?branch=master)](https://requires.io/github/Lanseuo/boardify/requirements/?branch=master)
 
 ![Screenshot](https://raw.githubusercontent.com/Lanseuo/boardify/master/screenshot.png)
 

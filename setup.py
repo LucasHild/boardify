@@ -6,7 +6,7 @@ boardify
 
 A web-based dashboard to analyzing your data with Python
 
-|image0| |PyPI|
+|image0| |PyPI| |Requires|
 
 .. figure:: https://raw.githubusercontent.com/Lanseuo/boardify/master/screenshot.png
    :alt: Screenshot
@@ -114,6 +114,8 @@ Meta
 .. |image0| image:: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 .. |PyPI| image:: https://img.shields.io/pypi/v/boardify.svg?style=flat-square&colorB=dfb317
    :target: https://pypi.python.org/pypi/boardify
+.. |Requires| image:: https://requires.io/github/Lanseuo/boardify/requirements.svg?branch=master
+   :target: https://requires.io/github/Lanseuo/boardify/requirements/?branch=master)
 """
 
 setup(
