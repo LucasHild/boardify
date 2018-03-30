@@ -50,23 +50,38 @@ class Products(BasicBlock):
 class NicestFruit(BasicBlock):
     def config(self):
         self.name = "Nicest Fruit"
-        self.description = "A survey of 145 people asked them \"Which is the nicest fruit?\""
+        self.description = "A survey of 145 people asked them " \
+                "\"Which is the nicest fruit?\""
 
     def data(self):
         # Define the data for the chart
         data = {
-            "labels": ["Apple", "Orange", "Banana", "Kiwifruit", "Blueberry", "Grapes"],
-            "Survey One": [35, 20, 45, 10, 30, 5],
-            "Survey Two": [30, 25, 60, 5, 35, 0]
+            "datasets": {
+                "Survey One": [35, 20, 45, 10, 30, 5],
+                "Survey Two": [30, 25, 60, 5, 35, 0],
+            },
+            "labels": ["Apple",
+                       "Orange",
+                       "Banana",
+                       "Kiwifruit",
+                       "Blueberry",
+                       "Grapes"],
+            "background_color": ["rgb(128, 18, 2)",
+                                 "rgb(244, 132, 0)",
+                                 "rgb(246, 221, 0)",
+                                 "rgba(83, 65, 25, 0.97)",
+                                 "rgb(35, 123, 214)",
+                                 "rgb(99, 74, 161)"]
         }
 
         # Generate the bar chart
-        return BarChart(data, label="Fruits").generate()
+        return BarChart(data).generate()
 
 
 # Run the server
 dashboard = FruitDashboard()
 dashboard.run()
+
 ```
 
 Open the dashboard at [http://localhost:7000](http://localhost:7000)

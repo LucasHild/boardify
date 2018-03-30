@@ -45,40 +45,52 @@ Usage
             self.description = "A list of our products"
 
         def data(self):
-            return \"\"\"<ul>
-            <li>Apple</li>
-            <li>Orange</li>
-            <li>Banana</li>
-            <li>Kiwifruit</li>
-            <li>Blueberry</li>
-            <li>Grapes</li>
-            </ul>\"\"\"
+            return \"""<ul>
+    <li>Apple</li>
+    <li>Orange</li>
+    <li>Banana</li>
+    <li>Kiwifruit</li>
+    <li>Blueberry</li>
+    <li>Grapes</li>
+    </ul>\"""
 
 
     # Block renders a bar chart
     class NicestFruit(BasicBlock):
         def config(self):
             self.name = "Nicest Fruit"
-            self.description = "A survey of 145 people asked them \"Which is the nicest fruit?\""
+            self.description = "A survey of 145 people asked them " \
+                "\"Which is the nicest fruit?\""
 
         def data(self):
             # Define the data for the chart
-            data = [
-                {"label": "Apple", "value": 35, "color": "rgba(247, 0, 0, 0.2)"},
-                {"label": "Orange", "value": 20, "color": "rgba(254, 114, 0, 0.2)"},
-                {"label": "Banana", "value": 45, "color": "rgba(237, 250, 0, 0.2)"},
-                {"label": "Kiwifruit", "value": 10, "color": "rgba(12, 250, 0, 0.2)"},
-                {"label": "Blueberry", "value": 30, "color": "rgba(0, 85, 250, 0.2)"},
-                {"label": "Grapes", "value": 5, "color": "rgba(177, 0, 250, 0.2)"}
-            ]
+            data = {
+                "datasets": {
+                    "Survey One": [35, 20, 45, 10, 30, 5],
+                    "Survey Two": [30, 25, 60, 5, 35, 0],
+                },
+                "labels": ["Apple",
+                           "Orange",
+                           "Banana",
+                           "Kiwifruit",
+                           "Blueberry",
+                           "Grapes"],
+                "background_color": ["rgb(128, 18, 2)",
+                                     "rgb(244, 132, 0)",
+                                     "rgb(246, 221, 0)",
+                                     "rgba(83, 65, 25, 0.97)",
+                                     "rgb(35, 123, 214)",
+                                     "rgb(99, 74, 161)"]
+            }
 
             # Generate the bar chart
-            return BarChart(data, label="Fruits").generate()
+            return BarChart(data).generate()
 
 
     # Run the server
     dashboard = FruitDashboard()
     dashboard.run()
+
 
 Open the dashboard at http://localhost:7000
 
@@ -106,13 +118,13 @@ Meta
 
 setup(
     name="boardify",
-    version="0.2.0",
+    version="0.2.1",
     description=" A web-based dashboard to analyzing your data with Python ",
     long_description=long_description,
     license="MIT",
     author="Lucas Hild",
     author_email="contact@lucas-hild.de",
-    url="https://lucas-hild.de",
+    url="https://github.com/Lanseuo/boardify",
     packages=["boardify"],
     install_requires=[
         "flask"
