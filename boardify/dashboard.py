@@ -3,10 +3,12 @@ import os
 from flask import Flask
 from .server import _EndpointAction
 
+
 class BasicDashboard:
     def __init__(self):
         self.blocks = []
         self.name = None
+        self.theme_color = "rgb(35, 76, 94)"
         self.config()
 
     def config(self):
@@ -55,7 +57,7 @@ class BasicDashboard:
 
             main_html += "</div>\n"
 
-        return html.replace("HTMLCONTENT", main_html)
+        return html.replace("THEME_COLOR", self.theme_color).replace("HTMLCONTENT", main_html)
 
     def run(self):
         self.app = Flask(__name__)
