@@ -1,33 +1,26 @@
 import json
-import random
-import string
 
-from .chart import BasicChart
+from boardify.block import BasicBlock
 
 
-class LineChart(BasicChart):
-    def __init__(self, data):
-        """
-        :param data: list with objects
-        :return:
-        """
-        self.data = data
-
-        # Generate random id for element
-        self.id = "".join(random.choice(string.ascii_lowercase) for _ in range(12))
+class LineChart(BasicBlock):
+    def data(self):
+        return {}
 
     def generate(self):
+        data = self.data()
+
         configuration = {
             "type": "line",
             "data": {
-                "labels": self.data.get("labels"),
+                "labels": data.get("labels"),
                 "datasets": [{
                     "label": key,
                     "data": value,
                     "fill": False,
-                    "backgroundColor": self.data.get("color").get(key),
-                    "borderColor": self.data.get("color").get(key)
-                } for key, value in self.data["datasets"].items()]
+                    "backgroundColor": data.get("color").get(key),
+                    "borderColor": data.get("color").get(key)
+                } for key, value in data["datasets"].items()]
             },
             "options": {
                 "scales": {

@@ -120,7 +120,7 @@ Meta
 
 setup(
     name="boardify",
-    version="0.3.0",
+    version="0.4.0",
     description=" A web-based dashboard to analyzing your data with Python ",
     long_description=long_description,
     license="MIT",

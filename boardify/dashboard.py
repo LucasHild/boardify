@@ -43,7 +43,8 @@ class BasicDashboard:
 
         # Create arrays for the first and the second column based on the calculated distribution
         first_column = self.blocks[:first_column_length]
-        second_column = self.blocks[-second_column_length:] if len(self.blocks) > 1 else []
+        second_column = self.blocks[-second_column_length:] if len(
+            self.blocks) > 1 else []
 
         # For every column
         for column in [first_column, second_column]:
@@ -52,7 +53,7 @@ class BasicDashboard:
             # For every block in the column
             for block in column:
                 main_html += "<div class=\"block\">\n"
-                main_html += block.generate() + "\n"
+                main_html += block.generate_block() + "\n"
                 main_html += "</div>\n"
 
             main_html += "</div>\n"
@@ -61,5 +62,6 @@ class BasicDashboard:
 
     def run(self):
         self.app = Flask(__name__)
-        self.app.add_url_rule("/", "index", _EndpointAction(response=self.generate()))
+        self.app.add_url_rule(
+            "/", "index", _EndpointAction(response=self.generate()))
         self.app.run(debug=True, port=7000)

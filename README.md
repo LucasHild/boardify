@@ -17,7 +17,7 @@ pip3 install boardify
 ## Usage
 
 ```python
-from boardify import *
+from boardify import BasicDashboard, BasicBlock, BarChart
 
 
 # Class for the dashboard
@@ -36,7 +36,7 @@ class Products(BasicBlock):
         self.name = "Products"
         self.description = "A list of our products"
 
-    def data(self):
+    def generate(self):
         return """<ul>
         <li>Apple</li>
         <li>Orange</li>
@@ -48,15 +48,14 @@ class Products(BasicBlock):
 
 
 # Block renders a bar chart
-class NicestFruit(BasicBlock):
+class NicestFruit(BarChart):
     def config(self):
         self.name = "Nicest Fruit"
-        self.description = "A survey of 145 people asked them " \
-                "\"Which is the nicest fruit?\""
+        self.description = ("A survey of 145 people asked them "
+                            "\"Which is the nicest fruit?\"")
 
     def data(self):
-        # Define the data for the chart
-        data = {
+        return {
             "datasets": {
                 "Survey One": [35, 20, 45, 10, 30, 5],
                 "Survey Two": [30, 25, 60, 5, 35, 0],
@@ -75,14 +74,10 @@ class NicestFruit(BasicBlock):
                                  "rgb(99, 74, 161)"]
         }
 
-        # Generate the bar chart
-        return BarChart(data).generate()
-
 
 # Run the server
 dashboard = FruitDashboard()
 dashboard.run()
-
 ```
 
 Open the dashboard at [http://localhost:7000](http://localhost:7000)

@@ -1,36 +1,36 @@
 import json
-import random
-import string
-
-from .chart import BasicChart
+from boardify import BasicBlock
 
 
-class BarChart(BasicChart):
-    def __init__(self, data, type="vertical"):
-        """
-        :param data: list with objects
-        :return:
-        """
+class BarChart(BasicBlock):
+    def __init__(self):
+        self.orientation = None
+        super().__init__()
 
-        self.data = data
-        if type == "horizontal":
-            self.type = "horizontalBar"
-        else:
-            self.type = "bar"
-
-        # Generate random id for element
-        self.id = "".join(random.choice(string.ascii_lowercase) for _ in range(12))
+    def data(self):
+        return {}
 
     def generate(self):
+        data = self.data()
+
+        if self.orientation == "horizontal":
+            orientation = "horizontalBar"
+        elif self.orientation == "vertical":
+            orientation = "bar"
+        elif not self.orientation:
+            orientation = "bar"
+        else:
+            orientation = self.orientation
+
         configuration = {
-            "type": self.type,
+            "type": orientation,
             "data": {
-                "labels": self.data.get("labels"),
+                "labels": data.get("labels"),
                 "datasets": [{
                     "label": key,
                     "data": value,
-                    "backgroundColor": self.data.get("background_color")
-                } for key, value in self.data["datasets"].items()]
+                    "backgroundColor": data.get("background_color")
+                } for key, value in data["datasets"].items()]
             },
             "options": {
                 "scales": {
