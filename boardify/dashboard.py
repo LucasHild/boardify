@@ -17,10 +17,9 @@ class BaseDashboard:
         )
 
     def add_block(self, block):
-        self.blocks.append(block)
+        self.blocks.append(block())
 
     def generate(self):
-
         # Open the html template
         with open(os.path.dirname(os.path.abspath(__file__)) + "/index.html", "r") as f:
             file = f.read()
