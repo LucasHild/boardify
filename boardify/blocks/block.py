@@ -13,13 +13,20 @@ class BaseBlock:
                           for _ in range(12))
 
     def config(self):
-        pass
+        raise AttributeError(
+            self.__class__.__name__ + " needs config() method"
+        )
 
     def data(self):
-        return ""
+        print()
+        raise AttributeError(
+            self.__class__.__name__ + " needs data() method"
+        )
 
     def generate(self):
-        return ""
+        raise AttributeError(
+            self.__class__.__name__ + " needs generate() method"
+        )
 
     def generate_block(self):
         name = self.name or "Untitled"

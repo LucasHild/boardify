@@ -4,9 +4,6 @@ from .block import BaseBlock
 
 
 class LineChart(BaseBlock):
-    def data(self):
-        return {}
-
     def generate(self):
         data = self.data()
 

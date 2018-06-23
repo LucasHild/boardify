@@ -7,9 +7,6 @@ class BarChart(BaseBlock):
         self.orientation = None
         super().__init__()
 
-    def data(self):
-        return {}
-
     def generate(self):
         data = self.data()
 

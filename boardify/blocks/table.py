@@ -2,9 +2,6 @@ from .block import BaseBlock
 
 
 class Table(BaseBlock):
-    def data(self):
-        return []
-
     def generate(self):
         data = self.data()
 
@@ -17,9 +14,9 @@ class Table(BaseBlock):
         table += "    </tr>\n"
 
         # Add rows
-        for i in data:
+        for row in data:
             table += "    <tr>\n"
-            table += "      <td>" + "</td><td>".join(i) + "</td>\n"
+            table += "      <td>" + "</td><td>".join(row) + "</td>\n"
             table += "    </tr>\n"
 
         table += "  </table>\n"

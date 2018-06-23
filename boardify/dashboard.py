@@ -12,7 +12,9 @@ class BaseDashboard:
         self.config()
 
     def config(self):
-        pass
+        raise AttributeError(
+            self.__class__.__name__ + " needs config() method"
+        )
 
     def add_block(self, block):
         self.blocks.append(block)
