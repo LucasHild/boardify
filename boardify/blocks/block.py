@@ -22,13 +22,10 @@ class BaseBlock:
         return ""
 
     def generate_block(self):
+        name = self.name or "Untitled"
+
         html = ""
-
-        if self.name:
-            html += "<div class=\"block-title\"><h3>" + self.name + "</h3></div>\n"
-        else:
-            html += "<div class=\"block-title\"><h3>Untitled</h3></div>\n"
-
+        html += "<div class=\"block-title\"><h3>" + name + "</h3></div>\n"
         html += "<div class=\"block-content\">"
 
         if self.description:
