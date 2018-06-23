@@ -1,5 +1,6 @@
 from flask import Response
 
+
 class _EndpointAction(object):
     def __init__(self, response):
         self.action = None

@@ -1,25 +1,35 @@
 import json
+from .block import BasicBlock
 
-from boardify.block import BasicBlock
 
+class BarChart(BasicBlock):
+    def __init__(self):
+        self.orientation = None
+        super().__init__()
 
-class LineChart(BasicBlock):
     def data(self):
         return {}
 
     def generate(self):
         data = self.data()
 
+        if self.orientation == "horizontal":
+            orientation = "horizontalBar"
+        elif self.orientation == "vertical":
+            orientation = "bar"
+        elif not self.orientation:
+            orientation = "bar"
+        else:
+            orientation = self.orientation
+
         configuration = {
-            "type": "line",
+            "type": orientation,
             "data": {
                 "labels": data.get("labels"),
                 "datasets": [{
                     "label": key,
                     "data": value,
-                    "fill": False,
-                    "backgroundColor": data.get("color").get(key),
-                    "borderColor": data.get("color").get(key)
+                    "backgroundColor": data.get("background_color")
                 } for key, value in data["datasets"].items()]
             },
             "options": {

@@ -1,4 +1,4 @@
-from boardify.block import BasicBlock
+from .block import BasicBlock
 
 
 class Table(BasicBlock):
