@@ -17,11 +17,11 @@ pip3 install boardify
 ## Usage
 
 ```python
-from boardify import BasicDashboard, BasicBlock, BarChart
+from boardify import BaseDashboard, BaseBlock, BarChart
 
 
 # Class for the dashboard
-class FruitDashboard(BasicDashboard):
+class FruitDashboard(BaseDashboard):
     def config(self):
         self.name = "Fruit Company"
 
@@ -31,7 +31,7 @@ class FruitDashboard(BasicDashboard):
 
 
 # Block contains HTML Code
-class Products(BasicBlock):
+class Products(BaseBlock):
     def config(self):
         self.name = "Products"
         self.description = "A list of our products"
