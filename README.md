@@ -26,8 +26,8 @@ class FruitDashboard(BaseDashboard):
         self.name = "Fruit Company"
 
         # Add Blocks to the dashboard
-        self.add_block(Products())
-        self.add_block(NicestFruit())
+        self.add_block(Products)
+        self.add_block(NicestFruit)
 
 
 # Block contains HTML Code
