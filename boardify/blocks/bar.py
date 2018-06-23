@@ -1,8 +1,8 @@
 import json
-from .block import BasicBlock
+from .block import BaseBlock
 
 
-class BarChart(BasicBlock):
+class BarChart(BaseBlock):
     def __init__(self):
         self.orientation = None
         super().__init__()

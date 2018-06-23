@@ -1,7 +1,7 @@
-from .block import BasicBlock
+from .block import BaseBlock
 
 
-class Table(BasicBlock):
+class Table(BaseBlock):
     def data(self):
         return []
 

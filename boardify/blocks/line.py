@@ -1,9 +1,9 @@
 import json
 
-from .block import BasicBlock
+from .block import BaseBlock
 
 
-class LineChart(BasicBlock):
+class LineChart(BaseBlock):
     def data(self):
         return {}
 

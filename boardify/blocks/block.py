@@ -2,7 +2,7 @@ import random
 import string
 
 
-class BasicBlock:
+class BaseBlock:
     def __init__(self):
         self.name = None
         self.description = None

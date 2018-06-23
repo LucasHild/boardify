@@ -4,7 +4,7 @@ from flask import Flask
 from .server import _EndpointAction
 
 
-class BasicDashboard:
+class BaseDashboard:
     def __init__(self):
         self.blocks = []
         self.name = None
